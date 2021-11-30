@@ -27,6 +27,7 @@ export default function App() {
                     type='text'
                     name='message'
                     placeholder='메세지를 입력 하세요'
+                    onChange
                     />
                 <br/>
                 <br/>

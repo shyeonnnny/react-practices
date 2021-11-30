@@ -4,6 +4,52 @@ import logo from '../assets/images/react-logo.png';
 export default function App() {
     const imageRef = useRef(null);
 
+    const onKeyPressInput = (e) => {
+        if(e.key = 'Enter'){
+            console.log(e.target.value);
+        }
+    }
+
+    const onFocusInput = (e) => {
+        console.log('focued');
+    }
+
+    const onBlurInput = (e) => {
+        console.log('blur');
+    }
+
+    const onMouseOverImage = (e) => {
+        console.log('mouseover', `x=${e.clientX}, y=${e.clientY}`)
+    }
+
+    const onMouseMoveImage = (e) => {
+        const offsetTop = imageRef.current.offsetTop;
+        const offsetLeft = imageRef.current.offsetLeft;
+
+        console.log('mousemove', `x=${e.clientX-offsetLeft}, y=${e.clientY-offsetTop}`)
+    }
+
+    const onMouseOutImage = (e) => {
+        console.log('mouseout', `x=${e.clientX}, y=${e.clientY}`)
+    }
+
+    const onMouseDownImage = (e) => {
+        console.log('mouseDown', `x=${e.clientX}, y=${e.clientY}`)
+    }
+
+    const onMouseUpImage = (e) => {
+        console.log('mouseUp', `x=${e.clientX}, y=${e.clientY}`)
+    }
+
+    const onClickImage = (e) => {
+        console.log('onclick', `x=${e.clientX}, y=${e.clientY}`)
+    }
+
+    const onDoubleClickImage = (e) => {
+        console.log('dblclick', `x=${e.clientX}, y=${e.clientY}`)
+    }
+    
+
 
 
     return (
@@ -14,7 +60,8 @@ export default function App() {
                 placeholder='메세지를 입력 하세요'
                 onKeyPress={ onKeyPressInput }
                 onFocus={ onFocusInput }
-                onBlur={ onBlurInput } />
+                onBlur={ onBlurInput } 
+                />
                 <br/>
                 <br/>
             <img
@@ -25,13 +72,14 @@ export default function App() {
                     border: '1px solid #ccc'
                 } }
                 src={ logo }
-                onMouseOver={ onMouseOverImage }
-                onMouseMove={ onMouseMoveImage }
-                onMouseOut={ onMouseOutImage }
-                onMouseDown={ onMouseDownImage }
-                onMouseUp={ onMouseUpImage }
-                onClick={ onClickImage }
-                onDoubleClick={ onDoubleClickImage }/>
+                 onMouseOver={ onMouseOverImage }
+                 onMouseMove={ onMouseMoveImage }
+                 onMouseOut={ onMouseOutImage }
+                 onMouseDown={ onMouseDownImage }
+                 onMouseUp={ onMouseUpImage }
+                 onClick={ onClickImage }
+                 onDoubleClick={ onDoubleClickImage }
+                />
         </Fragment>
     );
 }
