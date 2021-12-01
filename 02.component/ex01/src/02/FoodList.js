@@ -7,6 +7,7 @@ export default class FoodList extends Component {
         // this.props.foods.forEach(function(food){
         //    components.push(<ListItem name={food.name} quantity={food.quantity} />);
         // });
+        // console.log(components)
 
         // const r = [1, 2, 3, 4].map(function(e){
         //    return e * e;

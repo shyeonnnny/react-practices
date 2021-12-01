@@ -11,8 +11,9 @@ module.exports = {
     },
     module: {
         rules: [{
-            test: /.(sa|sc|c)ss$/i, // . : css로 시작하는 $: css로 끝나는 (i는 뭐지 ?)
-            use: ['style-loader', 'css-loader', 'sass-loader']
+            test: /.(sa|sc|c)ss$/i, // . : css로 시작하는 $: css로 끝나는 (i는 뭐지 ?) // i : 대소문자 무시
+                                                                                      // g : 글로벌
+            use: ['style-loader', 'css-loader', 'sass-loader']  // 순서 중요 !
         },{
             test: /\.(png|gif|jpe?g|svg|ico|tiff?|bmp)$/i, // e? : e가 있어도되고 없어도됨
             type: 'asset/resource'

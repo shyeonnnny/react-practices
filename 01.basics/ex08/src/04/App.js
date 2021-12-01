@@ -14,5 +14,6 @@ export default function(){
             null, 
             React.createElement(Header, null), 
             React.createElement(Content, null))
+        // React.createElement(Fragment, null, Header(), Contents());
     )
 }

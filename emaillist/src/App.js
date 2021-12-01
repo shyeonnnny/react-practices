@@ -1,12 +1,9 @@
 import React from 'react';
-import Guestbook from './Guestbook';
-import List from './List';
 
 export default function() {
     return (
         <div id='App'>
-          <Guestbook />
-          <List />
+          <h1>Emaillist</h1>
         </div>
     )
 }
