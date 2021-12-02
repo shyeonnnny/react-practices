@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './assets/scss/EmailList.scss'
 import Email from './Email'
-const EmailList = ({keyword, emails}) => {
+const EmailList = ({keyword, emails, callback}) => {
     console.log('emaillist', keyword);
     return (
         <div>
@@ -12,7 +12,10 @@ const EmailList = ({keyword, emails}) => {
                         .map((email) => <Email key={email.no}
                                                     firstName={email.firstName}
                                                     lastName={email.lastName}
-                                                    email={email.email}/>)
+                                                    email={email.email}
+                                                    
+                                                    callback={callback}
+                                                    listno={email.no}    />)
                 }
             </ul>
         </div>
