@@ -6,10 +6,9 @@ export default function Form() {
         e.preventDefault();
 
         // validation이 딱히 필요 없을 때....
-        console.log(e.target.email.value, ':', e.target.password.value)
+        console.log(e.target.email.value, ':', e.target.password.value);
 
         // ajax 로그인
-
     }
 
     return (

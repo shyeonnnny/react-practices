@@ -10,6 +10,7 @@ export default function App() {
         event.preventDefault();
         console.log(event.target.name, ':', 'Ajax로 등록할 겁니다.');
     }
+    // preventDefault를 안해주면 submit을 누르자마자 콘솔창에 글이 사라짐
 
     return (
         <Fragment>

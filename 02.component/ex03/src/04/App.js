@@ -23,6 +23,8 @@ export default function App() {
     }
 
     const onMouseMoveImage = (e) => {
+        console.log(e.target, ',' , imageRef.current);
+        // 위 둘은 같음
         const offsetTop = imageRef.current.offsetTop;
         const offsetLeft = imageRef.current.offsetLeft;
 
