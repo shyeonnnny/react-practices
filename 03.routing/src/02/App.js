@@ -6,41 +6,38 @@ import Guestbook from "./component/Guestbook";
 export default function App() {
     const [route, setRoute] = useState({page: '/'});
 
-    useEffect(() =>{
-        const handlePopState = () => setRoute(window.location.hash.substr(1));
-        
-        window.addEventListener('popstate',handlePopState )
+    useEffect(() => {
+        const handlePopState = (e) => setRoute(e.state);
+
+        window.addEventListener('popstate', handlePopState);
         return () => {
-            window.removeEventListener('popstate',handlePopState)
+            window.removeEventListener('popstate', handlePopState);
         };
-    },[])
-
-
+    }, []);
 
     const handleLinkClick = (e) => {
         e.preventDefault();
 
         const url = e.target.href.substr(e.target.href.lastIndexOf('/'));
-        window.history.pushState({page: url}, e.target.text, url); // 스택입니다
+        window.history.pushState({page: url}, e.target.text, url);
         setRoute({page: url});
     }
-
 
     return (
         <div>
             {
                 (() => {
-                    switch(route.page){
-                        case '/': 
+                    switch(route.page) {
+                        case '/':
                             return <Main />;
-                        case '/guestbook': 
+                        case '/guestbook':
                             return <Guestbook />;
-                        case '/gallery': 
+                        case '/gallery':
                             return <Gallery />;
                         default:
                             return null;
                     }
-            })()
+                })()
             }
             <ul>
                 <li><a href={'/'} onClick={handleLinkClick}>[Main]</a></li>
