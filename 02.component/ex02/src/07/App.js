@@ -79,7 +79,7 @@ export default function App() {
                         backgroundColor: '#ccc'
                     }
                 }}
-                contentLabel="modal04 example">
+                contentLabel="04 example">
                 <h1>modal04</h1>
                 <button onClick={ () => setModal04IsOpen(false) }>
                     Close
